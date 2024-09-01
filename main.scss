@@ -1,0 +1,270 @@
+@use 'colors' as c;
+@use 'fonts';
+@use 'booking';
+@use 'variables' as v;
+
+body {
+    font-family: "League Spartan", sans-serif;
+}
+
+// main page styles
+
+.hero {
+    background: url('/images/homepage/hero-bg-mobile@2x.jpg');
+    background-size: cover;
+    color: c.$white;
+    text-align: center;
+
+    .text {
+        margin: 0 1.5rem;
+        padding-top: 14rem;
+        padding-bottom: 9.25rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: 300;
+        line-height: 150%;
+        letter-spacing: -0.4px;
+        width: 80%;
+        margin: 2rem auto 0;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 165%;
+    }
+
+    .logo img {
+        width: 82.4px;
+    }
+
+    .btn-book {
+        @include v.btnBook;
+        margin-top: 3.25rem;
+    }
+}
+
+.ad {
+    text-align: center;
+    margin: -4.5rem 1.5rem 6rem;
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.4px;
+        line-height: 120%;
+        width: 80%;
+        margin: auto;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 165%;
+    }
+
+    .pattern-divide {
+        margin-top: 3rem;
+        margin-bottom: 2.25rem;
+    }
+
+    .card-img img{
+        box-shadow: 40px 100px 70px rgba(237, 237, 237, 1);
+    }
+}
+
+.locally-sourced {
+    text-align: center;
+    margin: 0 1.5rem 6rem;
+
+    h2 {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.4px;
+        line-height: 120%;
+        width: 80%;
+        margin: auto;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 1rem;
+        line-height: 165%;
+    }
+
+    .card-img img{
+        box-shadow: 40px 100px 70px rgba(237, 237, 237, 1);
+    }
+
+    .pattern-divide {
+        margin-top: 3rem;
+        margin-bottom: 2.25rem;
+    }
+}
+
+// main div that contains the different menu options as well as the card header and text
+.menu {
+    background: c.$codGray;
+    color: c.$white;
+    text-align: center;
+    padding: 6rem 1.5rem 0;
+
+    h4 {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.4px;
+        line-height: 120%;
+        width: 80%;
+        margin: auto;
+    }
+
+    p {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 150%;
+    }
+
+    h5 {
+        font-size: 1.25rem;
+        line-height: 150%;
+        font-weight: 700;
+        letter-spacing: -0.25px;
+        margin-bottom: .5rem;
+        margin-top: 1.125rem;
+    }
+
+    // div that contains the differnt menu options
+
+    .popular {
+        margin-top: 5rem;
+        display: grid;
+        row-gap: 1.5rem;
+    }
+
+    .pattern-divide {
+        margin-bottom: 2.25rem;
+    }
+
+    // these are the different menu options that are presented
+
+    .opt {
+
+        &:not(:last-child) {
+            border-bottom: 1px solid rgba(53, 53, 53, 1);
+        }
+
+        p {
+            margin: 0;
+            padding: 0 2.125rem;
+        }
+
+        .text {
+            margin-bottom: 4rem;
+        }
+    }
+}
+
+.events {
+    display: grid;
+    text-align: center;
+    margin: 6rem 1.5rem 0;
+
+    .nav {
+        text-transform: uppercase;
+        display: grid;
+        row-gap: 1rem;
+        margin-top: 2.5rem;
+
+        .event {
+            font-weight: 600;
+            font-size: 1.063rem;
+            letter-spacing: 2.5px;
+            color: c.$inactive;
+        }
+    }
+
+    .card-img img{
+        box-shadow: 40px 100px 70px rgba(237, 237, 237, 1);
+    }
+
+    .occasion {
+        margin-top: 2rem;
+        margin-bottom: 2rem
+    }
+
+    .btn-book {
+        @include v.btnBook;
+        background: c.$codGray;
+    }
+
+    h6 {
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: -0.4px;
+        color: c.$ebonyClay;
+        margin: 0;
+        margin-bottom: 0.813rem;
+    }
+    
+    p {
+        font-size: 1rem;
+        color: c.$ebonyClay;
+        font-weight: 400;
+        line-height: 165%;
+        margin: 0;
+    }
+}
+
+.reserve {
+    background: url('/images/homepage/ready-bg-mobile@2x.jpg');
+    background-size: cover;
+    padding: 5.275rem 1.5rem;
+    margin-top: 8rem;
+    text-align: center;
+    color: c.$white;
+
+    h6 {
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+        margin-bottom: 1.25rem;
+    }
+
+    .btn-book {
+        @include v.btnBook
+    }
+}
+
+.footer {
+    background: c.$codGray;
+    color: c.$white;
+    text-align: center;
+    display: grid;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.875rem;
+    padding: 4.75rem 0;
+
+    .logo {
+        margin-bottom: 2.625rem;
+    }
+
+    .address {
+        margin-bottom: 2rem;
+    }
+
+    .info {
+        display: block;
+        margin-bottom: .75rem;
+    }
+}
+
+.active {
+    @include v.active;
+}
+
+
+
+// booking page code

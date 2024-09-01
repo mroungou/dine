@@ -1,0 +1,35 @@
+@use 'colors' as c;
+
+@mixin btnBook {
+    text-transform: uppercase;
+    border: 1px solid c.$white;
+    width: 245px;
+    margin: 0 auto;
+    padding: 1.365rem 0;
+    letter-spacing: 2.5px;
+
+    a, a:visited {
+        color: c.$white;
+        text-decoration: none;
+        font-size: 1.063rem;
+        font-weight: 600;
+    }
+}
+
+@mixin active {
+    color: c.$active !important;
+        position: relative;
+        padding-bottom: .5rem;
+    
+        &::after {
+            content: "";
+            display: block;
+            width: 48px; /* Adjust width to the desired size */
+            height: 2px; /* Border thickness */
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            background: rgba(158, 127, 102, 1);
+        }
+}

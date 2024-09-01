@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./normalize.css">
+  <link rel="stylesheet" href="./dist/css/main.css">
+  <script src="./index.js" defer></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Dine - Exquisite Dinint since 1989</title>
+</head>
+<body>
+    <main>
+        <section class="hero-book">
+            <div class="logo"><img src="./images/logo.svg" alt="" class="Dine"></div>
+            <div class="text">
+                <h1>Reservations</h1>
+                <p>
+                    We can’t wait to host you. If you have any special requirements please feel free to
+                    call on the phone number below. We’ll be happy to accommodate you.
+                </p>
+                <div class="btn btn-book"><a href="./booking.html">Reserve place</a></div>
+            </div>
+        </section>        
+        <form action="" id="form" class="form">
+            <div class="name">
+                <input type="text" id="name" placeholder="Name" autocomplete="off"></input>
+            </div>
+            <div class="email">
+                <input type="email" id="email" autocomplete="off" placeholder="Email"></input>
+            </div>
+            <div class="date">
+                <p>Pick a date</p>
+                <div class="inputs">
+                    <div class="month">
+                        <input type="number" id="month" placeholder="MM" name="date">
+                    </div>
+                    <div class="day">
+                        <input type="number" id="day" placeholder="DD" name="date">
+                    </div>
+                    <div class="year">
+                        <input type="number" id="year" placeholder="YYYY" name="date">
+                    </div>
+                </div>
+            </div>
+            <div class="time">
+                <p>Pick a time</p>
+                <div class="inputs">
+                    <div class="hour">
+                        <input type="number" placeholder="09" id="hour">
+                    </div>
+                    <div class="minute">
+                        <input type="number" placeholder="00" id="minute">
+                    </div>
+                    <div class="am-pm">
+                        <img src="./images/icons/icon-arrow.svg" alt="">
+                        <select name="time-of-day" id="time-of-day">
+                            <option value="am">AM</option>
+                            <option value="pm">PM</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="people">
+                <div class="minus-btn" id="minus-btn">
+                    <img src="./images/icons/icon-minus.svg" alt="Minus Button">
+                </div>
+                <div class="number" id="number">
+                    <p><span id="number">4</span> people</p>
+                </div>
+                <div class="plus-btn" id="plus-btn">
+                    <img src="./images/icons/icon-plus.svg" alt="Plus Button">
+                </div>
+            </div>
+            <button class="btn-reserve" id="make-reservation">Make Reservation</button>
+        </form>
+        <footer class="footer">
+            <div class="logo">
+                <img src="./images/logo.svg" alt="Dine">
+            </div>
+            <div class="address">
+                <span class="info">Marthwaite, Sedbergh</span>
+                <span class="info">Cumbria</span>
+                <span class="info">+00 44 123 4567</span>
+            </div>
+            <div class="times">
+                <span class="info">Open Times</span>
+                <span class="info">Mon - Fri: 09:00 AM - 10:00 PM</span>
+                <span class="info">Sat - Sun: 09:00 AM - 11:30 PM</span>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
