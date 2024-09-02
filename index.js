@@ -1,7 +1,9 @@
 const occasionDiv = document.getElementById('occasion-div');
 const eventsImgDiv = document.getElementById('events-img-div');
 const eventsNav = [...document.getElementsByClassName('event')]; //spread operator to change to array
-
+const plusMinusBtn = [...document.getElementsByClassName('plus-minus-btn')]
+let numberOfPeople = 2;
+const inputElements = document.querySelectorAll('input');
 const eventsData = [ // array containg data for the occasion div
     {
         title: 'Family Gathering',
@@ -56,6 +58,23 @@ const updateOccasionDiv = (index) => { // index will be used to access the dets 
     occasionDiv.append(header6, eventP);
 }
 
+const updateReserveNumber = (btnId) => {
+    const reserveNumber = document.getElementById('number');
+
+    if (btnId === 'plus-btn') {
+       numberOfPeople ++;
+    } else {
+        numberOfPeople --;
+    }
+    reserveNumber.innerText = limitNumber(numberOfPeople);
+}
+
+plusMinusBtn.forEach(btn => {
+    btn.addEventListener('click', () => {
+        updateReserveNumber(btn.id)
+    })
+})
+
 eventsNav.forEach(nav => {
     nav.addEventListener('click', () => {
         for (const nav of eventsNav) {
@@ -69,4 +88,12 @@ eventsNav.forEach(nav => {
     })
 
 })
+
+const limitNumber = (num, min, max) => {
+    const MIN = min ?? 1;
+    const MAX = max ?? 20;
+    const number = num;
+
+    return Math.min(Math.max(number, MIN), MAX);
+}
 

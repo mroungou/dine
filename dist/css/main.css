@@ -54,30 +54,35 @@
   outline: none;
   border-bottom: 1px solid rgb(142, 142, 142);
 }
-.form select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-sizing: border-box;
-  width: 100%;
-  border: none;
-  padding-bottom: 1.19rem;
-  padding-left: 1rem;
-  border-bottom: 1px solid rgb(142, 142, 142);
-  outline: none;
-}
 .form p {
   margin: 0 0 0.5rem;
 }
-.form .am-pm {
+.form .select-container {
   display: grid;
+  position: relative;
 }
-.form .am-pm img {
-  z-index: 1;
+.form .select-container .select-box {
+  border: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-bottom: 1px solid rgb(142, 142, 142);
+  outline: none;
+  box-sizing: border-box;
+  width: 100%;
+  padding-bottom: 1.19rem;
+  padding-left: 1rem;
+}
+.form .select-container .icon-container {
   margin-left: auto;
+  padding-right: 0.5rem;
 }
-.form .am-pm img, .form .am-pm select {
+.form .select-container .icon-container,
+.form .select-container .select-box {
   grid-area: 1/-1;
+}
+.form .select-selected {
+  background-color: rgb(255, 255, 255);
 }
 .form .name,
 .form .email,
@@ -123,6 +128,10 @@
   text-decoration: none;
   font-size: 1.063rem;
   font-weight: 600;
+}
+
+.has-error input {
+  border-bottom: 1px solid rgb(181, 73, 73);
 }
 
 body {

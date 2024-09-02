@@ -52,23 +52,25 @@
                     <div class="minute">
                         <input type="number" placeholder="00" id="minute">
                     </div>
-                    <div class="am-pm">
-                        <img src="./images/icons/icon-arrow.svg" alt="">
-                        <select name="time-of-day" id="time-of-day">
+                    <div class="select-container">
+                        <select class="select-box" name="time-of-day" id="time-of-day">
                             <option value="am">AM</option>
                             <option value="pm">PM</option>
                         </select>
+                        <div class="icon-container">
+                            <img src="./images/icons/icon-arrow.svg" alt="Dropdown arrow">
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="people">
-                <div class="minus-btn" id="minus-btn">
+                <div class="minus-btn plus-minus-btn" id="minus-btn">
                     <img src="./images/icons/icon-minus.svg" alt="Minus Button">
                 </div>
-                <div class="number" id="number">
-                    <p><span id="number">4</span> people</p>
+                <div class="number">
+                    <p><span id="number">2</span> people</p>
                 </div>
-                <div class="plus-btn" id="plus-btn">
+                <div class="plus-btn plus-minus-btn" id="plus-btn">
                     <img src="./images/icons/icon-plus.svg" alt="Plus Button">
                 </div>
             </div>
