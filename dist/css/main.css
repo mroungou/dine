@@ -42,7 +42,6 @@
   padding: 2.1rem 2rem;
   background: rgb(255, 255, 255);
   font-size: 1.25rem;
-  color: rgb(17, 17, 17);
   box-shadow: 0px 150px 100px 35px rgba(151, 151, 151, 0.6);
 }
 .form input {
@@ -53,6 +52,8 @@
   padding-left: 1rem;
   outline: none;
   border-bottom: 1px solid rgb(142, 142, 142);
+  caret-color: rgb(158, 127, 102);
+  color: rgb(17, 17, 17);
 }
 .form p {
   margin: 0 0 0.5rem;
@@ -130,8 +131,24 @@
   font-weight: 600;
 }
 
+.has-error {
+  color: rgb(181, 73, 73);
+}
 .has-error input {
   border-bottom: 1px solid rgb(181, 73, 73);
+}
+.has-error input::-moz-placeholder {
+  color: rgb(181, 73, 73);
+}
+.has-error input::placeholder {
+  color: rgb(181, 73, 73);
+}
+.has-error .error-div {
+  color: rgb(181, 73, 73);
+  font-size: 0.625rem;
+  font-weight: 500;
+  letter-spacing: -0.13px;
+  margin-top: 0.813rem;
 }
 
 body {

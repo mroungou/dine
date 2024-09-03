@@ -4,6 +4,8 @@ const eventsNav = [...document.getElementsByClassName('event')]; //spread operat
 const plusMinusBtn = [...document.getElementsByClassName('plus-minus-btn')]
 let numberOfPeople = 2;
 const inputElements = document.querySelectorAll('input');
+const email = document.getElementById('email');
+const form = document.getElementById('form');
 const eventsData = [ // array containg data for the occasion div
     {
         title: 'Family Gathering',
@@ -41,6 +43,10 @@ const eventsData = [ // array containg data for the occasion div
         }
     }
 ]
+
+const reservationInfo = [];
+
+
 
 const updateOccasionDiv = (index) => { // index will be used to access the dets of eventsData
     const cardImg = document.createElement('img');
@@ -97,3 +103,53 @@ const limitNumber = (num, min, max) => {
     return Math.min(Math.max(number, MIN), MAX);
 }
 
+const validateInputs = () => {
+
+    isEmailValid(email.value);
+
+
+    for (const input of inputElements) {
+        if (input.value === '') {
+            // cals hasError function and adds the styling and text
+            hasError(input);
+        } else {
+            hasNoError(input);
+        }
+    }
+    // console.log(inputElements);
+}
+
+const hasError = (element) => {
+
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-div';
+    errorDiv.innerText = 'This field is required'
+    /* because for the time and date elemnt they are in smaller divs to achive the desired look
+    so I am first checking the ids if they are email or name as they are contained in one div to
+    add the has-error styling
+    */
+    if (element.id === 'email' || element.id === 'name' ) {
+        element.parentElement.classList.add('has-error');
+        element.parentElement.appendChild(errorDiv);
+    } else if (element.id !== 'name' || element.id !== 'email') {
+        element.parentElement.parentElement.parentElement.classList.add('has-error');
+        element.parentElement.parentElement.parentElement.appendChild(errorDiv);
+    }
+
+}
+
+const hasNoError = (element) => {
+    element.parentElement.classList.remove('has-error')
+}
+
+const isEmailValid = (emailValue) => {
+    const regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    // will return true if the email entered is valid
+    return regex.test(emailValue);
+}
+
+form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    validateInputs();
+})
