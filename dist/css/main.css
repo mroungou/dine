@@ -136,6 +136,7 @@
 }
 .has-error input {
   border-bottom: 1px solid rgb(181, 73, 73);
+  color: rgb(181, 73, 73);
 }
 .has-error input::-moz-placeholder {
   color: rgb(181, 73, 73);

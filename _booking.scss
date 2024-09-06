@@ -136,9 +136,10 @@
 
 .has-error {
     color: c.$red;
-
+    
     input {
         border-bottom: 1px solid c.$red;
+        color: c.$red;
         
         &::placeholder {
             color: c.$red;

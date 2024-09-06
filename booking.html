@@ -29,29 +29,19 @@
             <div class="email">
                 <input type="email" id="email" autocomplete="off" placeholder="Email"></input>
             </div>
-            <div class="date">
+            <div class="date" id="date">
                 <p>Pick a date</p>
                 <div class="inputs">
-                    <div class="month">
-                        <input type="number" id="month" placeholder="MM" name="date">
-                    </div>
-                    <div class="day">
-                        <input type="number" id="day" placeholder="DD" name="date">
-                    </div>
-                    <div class="year">
-                        <input type="number" id="year" placeholder="YYYY" name="date">
-                    </div>
+                    <input type="text" pattern="\d*" maxlength="2" class="date-input" id="month" placeholder="MM" name="month">
+                    <input type="text" pattern="\d*" maxlength="2" class="date-input" id="day" placeholder="DD" name="day">
+                    <input type="text" pattern="\d*" maxlength="4" class="date-input" id="year" placeholder="YYYY" name="year">
                 </div>
             </div>
             <div class="time">
                 <p>Pick a time</p>
                 <div class="inputs">
-                    <div class="hour">
-                        <input type="number" placeholder="09" id="hour">
-                    </div>
-                    <div class="minute">
-                        <input type="number" placeholder="00" id="minute">
-                    </div>
+                        <input type="number" placeholder="09" name="time" id="hour">
+                        <input type="number" placeholder="00" name=" time" id="minute">
                     <div class="select-container">
                         <select class="select-box" name="time-of-day" id="time-of-day">
                             <option value="am">AM</option>
