@@ -25,23 +25,31 @@
         <form action="" id="form" class="form">
             <div class="name">
                 <input type="text" id="name" placeholder="Name" autocomplete="off"></input>
+                <div class="error-div"></div>
             </div>
             <div class="email">
                 <input type="email" id="email" autocomplete="off" placeholder="Email"></input>
+                <div class="error-div"></div>
             </div>
             <div class="date" id="date">
-                <p>Pick a date</p>
+                <div class="text">
+                    <p>Pick a date</p>
+                    <div class="error-div"></div>
+                </div>
                 <div class="inputs">
                     <input type="text" pattern="\d*" maxlength="2" class="date-input" id="month" placeholder="MM" name="month">
                     <input type="text" pattern="\d*" maxlength="2" class="date-input" id="day" placeholder="DD" name="day">
                     <input type="text" pattern="\d*" maxlength="4" class="date-input" id="year" placeholder="YYYY" name="year">
                 </div>
             </div>
-            <div class="time">
-                <p>Pick a time</p>
+            <div class="time" id="time">
+                <div class="text">
+                    <p>Pick a time</p>
+                    <div class="error-div"></div>
+                </div>
                 <div class="inputs">
-                        <input type="number" placeholder="09" name="time" id="hour">
-                        <input type="number" placeholder="00" name=" time" id="minute">
+                        <input type="number" class="time-input" placeholder="09" name="time" id="hour">
+                        <input type="number" class="time-input" placeholder="00" name=" time" id="minute">
                     <div class="select-container">
                         <select class="select-box" name="time-of-day" id="time-of-day">
                             <option value="am">AM</option>

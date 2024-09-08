@@ -9,6 +9,11 @@ body {
 
 // main page styles
 
+// .tablet,
+// .desktop {
+//     display: none;
+// }
+
 .hero {
     background: url('/images/homepage/hero-bg-mobile@2x.jpg');
     background-size: cover;
@@ -265,6 +270,90 @@ body {
     @include v.active;
 }
 
+@media screen and (min-width: 768px) {
 
 
-// booking page code
+    .mobile {
+        display: none;
+    }
+
+    .hero {
+        background: url('/images/homepage/hero-bg-tablet.jpg');
+
+        .text {
+            margin: 0 3rem;
+            padding-top: 22rem;
+            padding-bottom: 14.8rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            letter-spacing: -0.6px;
+            line-height: 160%;
+            width: 50%;
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 155%;
+            width: 85%;
+            margin: auto;
+        }
+    }
+
+    .ad {
+        margin: -6.5rem 3rem 6rem;
+        position: relative;
+
+        h2 {
+            font-size: 3rem;
+            letter-spacing: -0.5px;
+            line-height: 105%;
+            width: 55%;
+        }
+
+        p {
+            font-size: 1.25rem;
+            width: 66%;
+            margin: 1rem auto auto;
+        }
+
+        .pattern {
+            position: absolute;
+            top: 29%;
+            right: 51%;
+        }
+    }
+
+    .locally-sourced {
+        position: relative;
+        margin: 0 0rem 6rem;
+        overflow-x: hidden;
+        padding: 0 3rem;
+
+        h2 {
+            font-size: 3rem;
+            width: 60%;
+            line-height: 100%;
+        }
+
+        p {
+            font-size: 1.25rem;
+            width: 70%;
+            margin: 1rem auto auto;
+        }
+
+        .pattern {
+            position: absolute;
+            top: 70%;
+            left: 50.5%;
+        }
+        
+        .pattern-2 {
+            position: absolute;
+            top: 35%;
+            left: 77%;
+        }
+    }
+
+}

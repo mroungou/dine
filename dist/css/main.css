@@ -149,7 +149,8 @@
   font-size: 0.625rem;
   font-weight: 500;
   letter-spacing: -0.13px;
-  margin-top: 0.813rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
 }
 
 body {
@@ -415,4 +416,76 @@ body {
   bottom: 0;
   transform: translateX(-50%);
   background: rgb(158, 127, 102);
+}
+
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+  .hero {
+    background: url("/images/homepage/hero-bg-tablet.jpg");
+  }
+  .hero .text {
+    margin: 0 3rem;
+    padding-top: 22rem;
+    padding-bottom: 14.8rem;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    letter-spacing: -0.6px;
+    line-height: 160%;
+    width: 50%;
+  }
+  .hero p {
+    font-size: 1.25rem;
+    line-height: 155%;
+    width: 85%;
+    margin: auto;
+  }
+  .ad {
+    margin: -6.5rem 3rem 6rem;
+    position: relative;
+  }
+  .ad h2 {
+    font-size: 3rem;
+    letter-spacing: -0.5px;
+    line-height: 105%;
+    width: 55%;
+  }
+  .ad p {
+    font-size: 1.25rem;
+    width: 66%;
+    margin: 1rem auto auto;
+  }
+  .ad .pattern {
+    position: absolute;
+    top: 29%;
+    right: 51%;
+  }
+  .locally-sourced {
+    position: relative;
+    margin: 0 0rem 6rem;
+    overflow-x: hidden;
+    padding: 0 3rem;
+  }
+  .locally-sourced h2 {
+    font-size: 3rem;
+    width: 60%;
+    line-height: 100%;
+  }
+  .locally-sourced p {
+    font-size: 1.25rem;
+    width: 70%;
+    margin: 1rem auto auto;
+  }
+  .locally-sourced .pattern {
+    position: absolute;
+    top: 70%;
+    left: 50.5%;
+  }
+  .locally-sourced .pattern-2 {
+    position: absolute;
+    top: 35%;
+    left: 77%;
+  }
 }/*# sourceMappingURL=main.css.map */

@@ -7,8 +7,9 @@ const inputElements = document.querySelectorAll('input');
 const email = document.getElementById('email');
 const form = document.getElementById('form');
 const dateInputs = document.querySelectorAll('.date-input');
-const timeInputs = document.getElementsByName('time');
+const timeInputs = document.querySelectorAll('.time-input');
 const emailInput = document.getElementById('email');
+const nameInput = document.getElementById('name');
 const eventsData = [ // array containg data for the occasion div
     {
         title: 'Family Gathering',
@@ -46,6 +47,14 @@ const eventsData = [ // array containg data for the occasion div
         }
     }
 ]
+
+const validationMessage = {
+    'empty': 'This field is required',
+    'incomplete': 'This field is incomplete',
+    'email': 'Please enter a valid email',
+    'invalid': 'Please enter a valid date',
+    'past': 'Please enter a date in the future',
+}
 
 const updateOccasionDiv = (index) => { // index will be used to access the dets of eventsData
     const cardImg = document.createElement('img');
@@ -106,24 +115,21 @@ const validateInputs = () => {
 
     isEmailValid(email.value);
     validDate();
+    validTime();
 
-
-    // for (const input of inputElements) {
-    //     if (input.value === '') {
-    //         // cals hasError function and adds the styling and text
-    //         hasError(input);
-    //     } else {
-    //         hasNoError(input);
-    //     }
-    // }
-    // console.log(inputElements);
+    if (nameInput.value === '') {
+        hasError(nameInput.parentElement, validationMessage.empty)
+    } else {
+        hasNoError(nameInput.parentElement)
+    }
 }
 
-const hasError = (element) => {
+const hasError = (element, message) => {
+    const errorDiv = element.querySelector('.error-div');
+    element.classList.add('has-error');
+    errorDiv.innerText = message;
 
-    const errorDiv = document.createElement('div');
-    errorDiv.className = 'error-div';
-    errorDiv.innerText = 'This field is required'
+    // console.log(errorDiv);
     /* because for the time and date elemnt they are in smaller divs to achive the desired look
     so I am first checking the ids if they are email or name as they are contained in one div to
     add the has-error styling
@@ -136,17 +142,13 @@ const hasError = (element) => {
     //     element.parentElement.parentElement.appendChild(errorDiv);
     // }
 
-    element.classList.add('has-error');
-    // element.insertBefore(errorDiv, element.nextSibling);
-
 }
 
 const hasNoError = (element) => {
-    // const inputDiv = element.parentElement;
-    // const errorDiv =  inputDiv.querySelector('.error-div')
+    const errorDiv =  element.querySelector('.error-div')
+    errorDiv.innerText = ''
 
-    // inputDiv.classList.remove('has-error');
-    // errorDiv.innerText = '';
+    element.classList.remove('has-error');
 
 }
 
@@ -155,20 +157,26 @@ const isEmailValid = (emailValue) => {
     // will return true if the email entered is valid
     const validEmail = regex.test(emailValue);
 
-    if (!validEmail) {
-        hasError(emailInput);
+    if (emailValue === '') {
+        hasError(email.parentElement, validationMessage.empty);
+    } else if (!validEmail) {
+        hasError(email.parentElement, validationMessage.email)
+    } else {
+        hasNoError(email.parentElement)
     }
 }
 
 const validDate = () => {
     const dateData = {}
-    const dateDiv = document.getElementById('date');
-    const reservationDate = Date.parse(`${dateData.year}-${dateData.month}-${dateData.day}`)
-    const dateToday = Date.now()
-    // let missingValues = false;
+
     for (const field of dateInputs) {
         dateData[field.name] = field.value;
     }
+
+    const dateDiv = document.getElementById('date');
+    const reservationDate = Date.parse(`${dateData.year}-${dateData.month}-${dateData.day}`)
+    const reservationDateValid = new Date(reservationDate);
+    const dateToday = Date.now()
 
     /* 
     Object.values() creates an array with the values of the dateDate obj
@@ -184,21 +192,37 @@ const validDate = () => {
     for (const dateInput in dateData) {
         if(!dateData[dateInput]) {
             missingValues = true;
-            break
+            break;
         }
     }
     */
 
     if (missingValues) {
-        hasError(dateDiv);
+        hasError(dateDiv, validationMessage.empty);
     } else if (reservationDate < dateToday) {
-        hasError(dateDiv)
-    } else if (!validDate) {
-        hasError(dateDiv);
+        hasError(dateDiv, validationMessage.past)
+    } else if (isNaN(reservationDateValid)) {
+        hasError(dateDiv, validationMessage.invalid);
+    } else {
+        hasNoError(dateDiv, '');
+    }
+}
+
+const validTime = () => {
+    const timeDiv = document.getElementById('time');
+
+    let timeData = []
+    for (const field of timeInputs) {
+        timeData[field.id] = field.value;
     }
 
-    // console.log(dateData, missingValues)
-    
+    const missingValues = Object.values(timeData).some(value => !value);
+
+    if (missingValues) {
+        hasError(timeDiv, validationMessage.incomplete)
+    } else {
+        hasNoError(timeDiv);
+    }
 }
 
 form.addEventListener('submit', (e) => {
