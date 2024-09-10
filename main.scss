@@ -9,13 +9,13 @@ body {
 
 // main page styles
 
-// .tablet,
-// .desktop {
-//     display: none;
-// }
+.tablet,
+.desktop {
+    display: none;
+}
 
 .hero {
-    background: url('/images/homepage/hero-bg-mobile@2x.jpg');
+    background: url('../../images/homepage/hero-bg-mobile@2x.jpg');
     background-size: cover;
     color: c.$white;
     text-align: center;
@@ -115,29 +115,22 @@ body {
     color: c.$white;
     text-align: center;
     padding: 6rem 1.5rem 0;
-
-    h4 {
-        font-size: 2rem;
-        font-weight: 700;
-        letter-spacing: -0.4px;
-        line-height: 120%;
-        width: 80%;
-        margin: auto;
-    }
-
-    p {
-        font-size: 1rem;
-        font-weight: 400;
-        line-height: 150%;
-    }
-
-    h5 {
-        font-size: 1.25rem;
-        line-height: 150%;
-        font-weight: 700;
-        letter-spacing: -0.25px;
-        margin-bottom: .5rem;
-        margin-top: 1.125rem;
+    // div that contains h4 and p
+    .text {
+        h4 {
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: -0.4px;
+            line-height: 120%;
+            width: 80%;
+            margin: auto;
+        }
+    
+        p {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 150%;
+        }
     }
 
     // div that contains the differnt menu options
@@ -160,9 +153,21 @@ body {
             border-bottom: 1px solid rgba(53, 53, 53, 1);
         }
 
+        h5 {
+            font-size: 1.25rem;
+            line-height: 150%;
+            font-weight: 700;
+            letter-spacing: -0.25px;
+            margin-bottom: .5rem;
+            margin-top: 1.125rem;
+        }
+
         p {
             margin: 0;
             padding: 0 2.125rem;
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 150%;
         }
 
         .text {
@@ -223,7 +228,7 @@ body {
 }
 
 .reserve {
-    background: url('/images/homepage/ready-bg-mobile@2x.jpg');
+    background: url('../../images/homepage/ready-bg-mobile@2x.jpg');
     background-size: cover;
     padding: 5.275rem 1.5rem;
     margin-top: 8rem;
@@ -278,7 +283,7 @@ body {
     }
 
     .hero {
-        background: url('/images/homepage/hero-bg-tablet.jpg');
+        background: url('../../images/homepage/hero-bg-tablet.jpg');
 
         .text {
             margin: 0 3rem;
@@ -327,9 +332,9 @@ body {
 
     .locally-sourced {
         position: relative;
-        margin: 0 0rem 6rem;
+        margin: 0 0rem 0rem;
         overflow-x: hidden;
-        padding: 0 3rem;
+        padding: 0 3rem 6rem;
 
         h2 {
             font-size: 3rem;
@@ -355,5 +360,71 @@ body {
             left: 77%;
         }
     }
+
+    .menu {
+        padding: 5rem 3rem;
+        // div that contains h4 and p
+        .text {
+            h4 {
+                font-size: 3rem;
+                letter-spacing: -.5px;
+                width: 70%;
+            }
+    
+            p {
+                font-size: 1.25rem;
+                width: 70%;
+                margin: auto;
+                margin-top: 1.75rem;
+            }
+        }
+
+        .popular {
+            margin: 3rem 3rem 0;
+            row-gap: 0;
+        }
+
+        .opt {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            column-gap: 5rem;
+            text-align: left;
+            justify-items: center;
+
+            .card-img {
+                position: relative;
+            }
+
+            &:not(:last-child) {
+                padding-bottom: 1.5rem;
+            }
+
+            &:not(:first-child) {
+                padding-top: 1.5rem;
+            }
+
+            h5 {
+                margin-top: 0;
+            }
+
+            p {
+                padding: 0;
+                margin: 0;
+                font-size: 1rem;
+                width: 100%;
+            }
+
+            .text {
+                margin-bottom: 0;
+            }
+
+            .pattern {
+                position: absolute;
+                top: 15%;
+            }
+        }
+    }
+
+
 
 }

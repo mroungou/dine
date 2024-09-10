@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 .hero-book {
-  background: url("/images/booking/hero-bg-mobile@2x.jpg");
+  background: url("../../images/booking/hero-bg-mobile@2x.jpg");
   background-size: cover;
   text-align: center;
   color: rgb(255, 255, 255);
@@ -157,8 +157,13 @@ body {
   font-family: "League Spartan", sans-serif;
 }
 
+.tablet,
+.desktop {
+  display: none;
+}
+
 .hero {
-  background: url("/images/homepage/hero-bg-mobile@2x.jpg");
+  background: url("../../images/homepage/hero-bg-mobile@2x.jpg");
   background-size: cover;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -256,7 +261,7 @@ body {
   text-align: center;
   padding: 6rem 1.5rem 0;
 }
-.menu h4 {
+.menu .text h4 {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.4px;
@@ -264,18 +269,10 @@ body {
   width: 80%;
   margin: auto;
 }
-.menu p {
+.menu .text p {
   font-size: 1rem;
   font-weight: 400;
   line-height: 150%;
-}
-.menu h5 {
-  font-size: 1.25rem;
-  line-height: 150%;
-  font-weight: 700;
-  letter-spacing: -0.25px;
-  margin-bottom: 0.5rem;
-  margin-top: 1.125rem;
 }
 .menu .popular {
   margin-top: 5rem;
@@ -288,9 +285,20 @@ body {
 .menu .opt:not(:last-child) {
   border-bottom: 1px solid rgb(53, 53, 53);
 }
+.menu .opt h5 {
+  font-size: 1.25rem;
+  line-height: 150%;
+  font-weight: 700;
+  letter-spacing: -0.25px;
+  margin-bottom: 0.5rem;
+  margin-top: 1.125rem;
+}
 .menu .opt p {
   margin: 0;
   padding: 0 2.125rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 150%;
 }
 .menu .opt .text {
   margin-bottom: 4rem;
@@ -352,7 +360,7 @@ body {
 }
 
 .reserve {
-  background: url("/images/homepage/ready-bg-mobile@2x.jpg");
+  background: url("../../images/homepage/ready-bg-mobile@2x.jpg");
   background-size: cover;
   padding: 5.275rem 1.5rem;
   margin-top: 8rem;
@@ -423,7 +431,7 @@ body {
     display: none;
   }
   .hero {
-    background: url("/images/homepage/hero-bg-tablet.jpg");
+    background: url("../../images/homepage/hero-bg-tablet.jpg");
   }
   .hero .text {
     margin: 0 3rem;
@@ -464,9 +472,9 @@ body {
   }
   .locally-sourced {
     position: relative;
-    margin: 0 0rem 6rem;
+    margin: 0 0rem 0rem;
     overflow-x: hidden;
-    padding: 0 3rem;
+    padding: 0 3rem 6rem;
   }
   .locally-sourced h2 {
     font-size: 3rem;
@@ -487,5 +495,56 @@ body {
     position: absolute;
     top: 35%;
     left: 77%;
+  }
+  .menu {
+    padding: 5rem 3rem;
+  }
+  .menu .text h4 {
+    font-size: 3rem;
+    letter-spacing: -0.5px;
+    width: 70%;
+  }
+  .menu .text p {
+    font-size: 1.25rem;
+    width: 70%;
+    margin: auto;
+    margin-top: 1.75rem;
+  }
+  .menu .popular {
+    margin: 3rem 3rem 0;
+    row-gap: 0;
+  }
+  .menu .opt {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    -moz-column-gap: 5rem;
+         column-gap: 5rem;
+    text-align: left;
+    justify-items: center;
+  }
+  .menu .opt .card-img {
+    position: relative;
+  }
+  .menu .opt:not(:last-child) {
+    padding-bottom: 1.5rem;
+  }
+  .menu .opt:not(:first-child) {
+    padding-top: 1.5rem;
+  }
+  .menu .opt h5 {
+    margin-top: 0;
+  }
+  .menu .opt p {
+    padding: 0;
+    margin: 0;
+    font-size: 1rem;
+    width: 100%;
+  }
+  .menu .opt .text {
+    margin-bottom: 0;
+  }
+  .menu .opt .pattern {
+    position: absolute;
+    top: 15%;
   }
 }/*# sourceMappingURL=main.css.map */
