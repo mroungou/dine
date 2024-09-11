@@ -13,79 +13,70 @@ const nameInput = document.getElementById('name');
 const eventsData = [ // array containg data for the occasion div
     {
         title: 'Family Gathering',
-        text: `We love catering for entire families. So please bring everyone along for a special meal with your
-                loved ones. We’ll provide a memorable experience for all.`,
+        text: "We love catering for entire families. So please bring everyone along for a special meal with your loved ones. We’ll provide a memorable experience for all.",
+        alt: 'Family Gathering',
         mobile: {
             src: './images/homepage/family-gathering-mobile.jpg',
             id: 'family-gathering-mobile',
             class: 'mobile',
-            alt: 'Family Gathering'
         },
 
         tablet: {
             src: './images/homepage/family-gathering-tablet.jpg',
             id: 'family-gathering-tablet',
             class: 'tablet',
-            alt: 'Family Gathering'
         },
 
         desktop: {
             src: './images/homepage/family-gathering-desktop.jpg',
             id: 'family-gathering-desktop',
             class: 'desktop',
-            alt: 'Family Gathering'
         }
     },
 
     {
         title: 'Special Events',
-        text: `Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you.
-                We’ll be sure to mark your special date with an unforgettable meal.`,
+        text: "Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you. We’ll be sure to mark your special date with an unforgettable meal.",
+        alt: 'Special Events',
         mobile: {
             src: './images/homepage/special-events-mobile.jpg',
             id: 'special-event-mobile',
             class: 'mobile',
-            alt: 'Special Events'
         },
 
         tablet: {
             src: './images/homepage/special-events-tablet.jpg',
             id: 'special-event-tablet',
             class: 'tablet',
-            alt: 'Special Events'
         },
 
         desktop: {
             src: './images/homepage/special-events-desktop.jpg',
             id: 'special-event-desktop',
             class: 'desktop',
-            alt: 'Special Events'
         }
     },
 
     {
         title: 'Social Events',
-        text: `Are you looking to have a larger social event? No problem! We’re more than happy to cater for big
-                parties. We’ll work with you to make your event a hit with everyone.`,
+        text: "Are you looking to have a larger social event? No problem! We’re more than happy to cater for big parties. We’ll work with you to make your event a hit with everyone.",
+        alt: 'Social Gathering',
         mobile: {
             src: './images/homepage/social-events-mobile.jpg',
             id: 'social-event-mobile',
             class: 'mobile',
-            alt: 'Social Gathering'
         },
 
         tablet: {
             src: './images/homepage/social-events-tablet.jpg',
             id: 'social-event-tablet',
             class: 'tablet',
-            alt: 'Social Gathering'
         },
 
         desktop: {
             src: './images/homepage/social-events-desktop.jpg',
             id: 'social-event-desktop',
             class: 'desktop',
-            alt: 'Social Gathering'
         }
     }
 ]
@@ -104,24 +95,18 @@ const updateOccasionDiv = (index) => { // index will be used to access the dets 
     const eventP = document.createElement('p');
 
     const screenWidth = window.innerWidth;
-    switch (screenWidth) {
-        case (1440):
-            cardImg.src = eventsData[index].desktop.src;
-            cardImg.className = eventsData[index].desktop.class;
-            cardImg.alt = eventsData[index].desktop.alt;
-            break;
-        
-        case (768):
-            cardImg.src = eventsData[index].tablet.src;
-            cardImg.className = eventsData[index].tablet.class;
-            cardImg.alt = eventsData[index].tablet.alt;
-            break;
-        
-        default: 
-            cardImg.src = eventsData[index].mobile.src;
-            cardImg.className = eventsData[index].mobile.class;
-            cardImg.alt = eventsData[index].mobile.alt;
-
+    if (screenWidth >= 1440) { // For desktop screens
+        cardImg.src = eventsData[index].desktop.src;
+        cardImg.className = eventsData[index].desktop.class;
+        cardImg.alt = eventsData[index].alt;
+    } else if (screenWidth >= 768) { // For tablet screens
+        cardImg.src = eventsData[index].tablet.src;
+        cardImg.className = eventsData[index].tablet.class;
+        cardImg.alt = eventsData[index].alt;
+    } else { // For mobile screens
+        cardImg.src = eventsData[index].mobile.src;
+        cardImg.className = eventsData[index].mobile.class;
+        cardImg.alt = eventsData[index].alt;
     }
 
 
@@ -283,6 +268,10 @@ const validTime = () => {
         hasNoError(timeDiv);
     }
 }
+
+// updateOccasionDiv(0); // sets the intial image and text
+
+// window.addEventListener('resize', updateOccasionDiv)
 
 form.addEventListener('submit', (e) => {
     e.preventDefault()

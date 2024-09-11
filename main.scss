@@ -267,7 +267,9 @@ body {
 
     .info {
         display: block;
-        margin-bottom: .75rem;
+        &:not(:last-child) {
+            margin-bottom: .75rem;
+        }
     }
 }
 
@@ -276,8 +278,9 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-
-
+    .tablet {
+        display: block;
+    }
     .mobile {
         display: none;
     }
@@ -323,6 +326,10 @@ body {
             margin: 1rem auto auto;
         }
 
+        .card-img img{
+            margin: auto;
+        }
+
         .pattern {
             position: absolute;
             top: 29%;
@@ -334,6 +341,7 @@ body {
         position: relative;
         margin: 0 0rem 0rem;
         overflow-x: hidden;
+        overflow-y: hidden;
         padding: 0 3rem 6rem;
 
         h2 {
@@ -348,15 +356,19 @@ body {
             margin: 1rem auto auto;
         }
 
+        .card-img img{
+            margin: auto;
+        }
+
         .pattern {
             position: absolute;
-            top: 70%;
+            top: 61%;
             left: 50.5%;
         }
         
         .pattern-2 {
             position: absolute;
-            top: 35%;
+            top: 30%;
             left: 77%;
         }
     }
@@ -421,10 +433,70 @@ body {
             .pattern {
                 position: absolute;
                 top: 15%;
+                left: 100%;
             }
         }
     }
+    
+    .events {
+        margin: 6rem 2.5rem 0;
 
+        .nav {
+            grid-template-columns: repeat(3, auto);
+            margin-top: 4rem;
+        }
 
+        .card-img {
+            margin: auto;
+            position: relative;
 
+            .pattern {
+                position: absolute;
+                right: 53%;
+                box-shadow: none;
+                bottom: 50%;
+                z-index: -1;
+            }
+
+            .pattern-2 {
+                position: absolute;
+                box-shadow: none;
+                top: -10%;
+                left: -10%;
+            }
+        }
+
+        .card-img img {
+            box-shadow: 0px 40px 75px 10px rgb(237, 237, 237);
+        }
+
+        h6 {
+            font-size: 3rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+
+    .reserve {
+        background: url('/images/homepage/ready-bg-tablet.jpg');
+        padding: 4.15rem 3rem;
+
+        h6 {
+            font-size: 3rem;
+        }
+    }
+
+    .footer {
+        grid-template-columns: repeat(2, auto);
+        padding: 4.75rem 2.5rem;
+        text-align: left;
+
+        .times {
+            grid-column-start: 2;
+        }
+    }
 }

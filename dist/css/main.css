@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
 .hero-book {
   background: url("../../images/booking/hero-bg-mobile@2x.jpg");
-  background-size: cover;
+  background-size: contain;
   text-align: center;
   color: rgb(255, 255, 255);
   padding: 4rem 1.5rem 13.5rem;
@@ -131,6 +131,52 @@
   font-weight: 600;
 }
 
+@media screen and (min-width: 768px) {
+  .mobile {
+    display: none;
+  }
+  .hero-book {
+    background: url("../../images/booking/hero-bg-tablet@2x.jpg");
+    background-size: cover;
+    padding: 4rem 2.5rem 15.75rem;
+  }
+  .hero-book h1 {
+    font-size: 3rem;
+    letter-spacing: -0.6px;
+  }
+  .hero-book p {
+    font-size: 1.25rem;
+    width: 85%;
+    margin: 0.75rem auto;
+  }
+  .hero-book .text {
+    margin-top: 3.75rem;
+  }
+  .hero-book .logo {
+    text-align: left;
+  }
+  .hero-book .logo img {
+    width: 103px;
+  }
+  .form {
+    margin: -14rem 7rem 4rem;
+    padding: 2.5rem 3rem;
+  }
+  .form .date, .form .time {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+  }
+  .form .inputs {
+    grid-template-columns: 80px 80px auto;
+  }
+  .form .people .plus-btn {
+    padding-right: 2rem;
+  }
+  .form .people .minus-btn {
+    padding-left: 2rem;
+  }
+}
 .has-error {
   color: rgb(181, 73, 73);
 }
@@ -406,6 +452,8 @@ body {
 }
 .footer .info {
   display: block;
+}
+.footer .info:not(:last-child) {
   margin-bottom: 0.75rem;
 }
 
@@ -427,6 +475,9 @@ body {
 }
 
 @media screen and (min-width: 768px) {
+  .tablet {
+    display: block;
+  }
   .mobile {
     display: none;
   }
@@ -465,6 +516,9 @@ body {
     width: 66%;
     margin: 1rem auto auto;
   }
+  .ad .card-img img {
+    margin: auto;
+  }
   .ad .pattern {
     position: absolute;
     top: 29%;
@@ -474,6 +528,7 @@ body {
     position: relative;
     margin: 0 0rem 0rem;
     overflow-x: hidden;
+    overflow-y: hidden;
     padding: 0 3rem 6rem;
   }
   .locally-sourced h2 {
@@ -486,14 +541,17 @@ body {
     width: 70%;
     margin: 1rem auto auto;
   }
+  .locally-sourced .card-img img {
+    margin: auto;
+  }
   .locally-sourced .pattern {
     position: absolute;
-    top: 70%;
+    top: 61%;
     left: 50.5%;
   }
   .locally-sourced .pattern-2 {
     position: absolute;
-    top: 35%;
+    top: 30%;
     left: 77%;
   }
   .menu {
@@ -546,5 +604,56 @@ body {
   .menu .opt .pattern {
     position: absolute;
     top: 15%;
+    left: 100%;
+  }
+  .events {
+    margin: 6rem 2.5rem 0;
+  }
+  .events .nav {
+    grid-template-columns: repeat(3, auto);
+    margin-top: 4rem;
+  }
+  .events .card-img {
+    margin: auto;
+    position: relative;
+  }
+  .events .card-img .pattern {
+    position: absolute;
+    right: 53%;
+    box-shadow: none;
+    bottom: 50%;
+    z-index: -1;
+  }
+  .events .card-img .pattern-2 {
+    position: absolute;
+    box-shadow: none;
+    top: -10%;
+    left: -10%;
+  }
+  .events .card-img img {
+    box-shadow: 0px 40px 75px 10px rgb(237, 237, 237);
+  }
+  .events h6 {
+    font-size: 3rem;
+  }
+  .events p {
+    font-size: 1.25rem;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .reserve {
+    background: url("/images/homepage/ready-bg-tablet.jpg");
+    padding: 4.15rem 3rem;
+  }
+  .reserve h6 {
+    font-size: 3rem;
+  }
+  .footer {
+    grid-template-columns: repeat(2, auto);
+    padding: 4.75rem 2.5rem;
+    text-align: left;
+  }
+  .footer .times {
+    grid-column-start: 2;
   }
 }/*# sourceMappingURL=main.css.map */
