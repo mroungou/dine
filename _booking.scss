@@ -171,6 +171,10 @@
         margin: -14rem 7rem 4rem;
         padding: 2.5rem 3rem;
 
+        p {
+            margin: 0;
+        }
+
         .date, .time {
             display: grid;
             grid-template-columns: 1fr 2fr;
@@ -198,6 +202,8 @@
 // styles for error states
 .has-error {
     color: c.$red;
+
+    
     
     input {
         border-bottom: 1px solid c.$red;
@@ -216,4 +222,10 @@
         margin-top: 0.25rem;
         margin-bottom: 0.5rem;
     }
+
+}
+
+.email .error-div, .name .error-div {
+    margin-top: .75rem;
+    padding-left: 1rem;
 }

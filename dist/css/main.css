@@ -162,6 +162,9 @@
     margin: -14rem 7rem 4rem;
     padding: 2.5rem 3rem;
   }
+  .form p {
+    margin: 0;
+  }
   .form .date, .form .time {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -197,6 +200,11 @@
   letter-spacing: -0.13px;
   margin-top: 0.25rem;
   margin-bottom: 0.5rem;
+}
+
+.email .error-div, .name .error-div {
+  margin-top: 0.75rem;
+  padding-left: 1rem;
 }
 
 body {
