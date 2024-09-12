@@ -291,7 +291,7 @@ body {
         .text {
             margin: 0 3rem;
             padding-top: 22rem;
-            padding-bottom: 14.8rem;
+            padding-bottom: 14.3rem;
         }
 
         h1 {
@@ -306,6 +306,10 @@ body {
             line-height: 155%;
             width: 85%;
             margin: auto;
+        }
+
+        .logo img {
+            width: 103px;
         }
     }
 
@@ -440,6 +444,7 @@ body {
     
     .events {
         margin: 6rem 2.5rem 0;
+        position: relative;
 
         .nav {
             grid-template-columns: repeat(3, auto);
@@ -448,22 +453,21 @@ body {
 
         .card-img {
             margin: auto;
-            position: relative;
+        }
 
-            .pattern {
-                position: absolute;
-                right: 53%;
-                box-shadow: none;
-                bottom: 50%;
-                z-index: -1;
-            }
+        .pattern {
+            position: absolute;
+            right: 45%;
+            box-shadow: none;
+            top: -15%;
+            z-index: -1;
+        }
 
-            .pattern-2 {
-                position: absolute;
-                box-shadow: none;
-                top: -10%;
-                left: -10%;
-            }
+        .pattern-2 {
+            position: absolute;
+            box-shadow: none;
+            top: -5%;
+            left: 0%;
         }
 
         .card-img img {
@@ -482,7 +486,7 @@ body {
     }
 
     .reserve {
-        background: url('/images/homepage/ready-bg-tablet.jpg');
+        background: url('../../images/homepage/ready-bg-tablet.jpg');
         padding: 4.15rem 3rem;
 
         h6 {
@@ -497,6 +501,44 @@ body {
 
         .times {
             grid-column-start: 2;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .tablet {
+        display: none;
+    }
+
+    .hero {
+        background: url('../../images/homepage/hero-bg-desktop@2x.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: left;
+
+        .text {
+            margin: 0 8rem;
+            padding-top: 4rem;
+            padding-bottom: 14rem;
+        }
+
+        h1 {
+            font-size: 5rem;
+            letter-spacing: -1px;
+            line-height: normal;
+            margin: 8rem 0 .625rem;
+            width: 45%;
+        }
+
+        p {
+            font-size: 1.25rem;
+            width: 35%;
+            margin: 0;
+        }
+
+        .btn-book {
+            margin: 0;
+            margin-top: 2.5rem;
         }
     }
 }
