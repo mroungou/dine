@@ -14,9 +14,6 @@ This is a solution to the [Dine Website Challenge challenge on Frontend Mentor](
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -34,83 +31,142 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](./mobile%20-%20booking%20-%20error.png)
+![](./tablet%20-%20events.png)
+![](./tablet%20-%20booking.-%20error.png)
+![](./mobile-events.png)
+![](./mobile%20-%20hero.png)
+![](./mobile%20-%20booking.png)
+![](./desktop%20-%20events%20-%202.png)
+![](./desktop%20-%20events.png)
+![](./desktop%20-%20booking.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
-
+- Solution URL: [Github Repo](https://github.com/mroungou/dine)
+- Live Site URL: [Live Site](https://mroungou.github.io/dine/)
 ## My process
 
 ### Built with
 
 - Semantic HTML5 markup
 - CSS custom properties
-- Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
+CSS - before learning about the not() selector I would always manually remove the styles of a particular child element. this definetely simplifies code and makes it more readable.
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+JS - I am very proud of the fact that I am starting to think of ways to dynamically update the DOM. By storing the data of the images and the text in an array of objects and accessing it based on what the user clicks is an efficient way to do it
 
-To see how you can add code snippets, see below:
-
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
+```scss
+ &:not(:last-child) {
+            border-bottom: 1px solid rgba(53, 53, 53, 1);
+            }
 ```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
+const eventsData = [ // array containg data for the occasion div
+    {
+        title: 'Family Gathering',
+        text: "We love catering for entire families. So please bring everyone along for a special meal with your loved ones. We’ll provide a memorable experience for all.",
+        alt: 'Family Gathering',
+        mobile: {
+            src: './images/homepage/family-gathering-mobile.jpg',
+            id: 'family-gathering-mobile',
+        },
+
+        tablet: {
+            src: './images/homepage/family-gathering-tablet.jpg',
+            id: 'family-gathering-tablet',
+        },
+
+        desktop: {
+            src: './images/homepage/family-gathering-desktop.jpg',
+            id: 'family-gathering-desktop',
+        }
+    },
+
+    {
+        title: 'Special Events',
+        text: "Whether it’s a romantic dinner or special date you’re celebrating with others we’ll look after you. We’ll be sure to mark your special date with an unforgettable meal.",
+        alt: 'Special Events',
+        mobile: {
+            src: './images/homepage/special-events-mobile.jpg',
+            id: 'special-event-mobile',
+        },
+
+        tablet: {
+            src: './images/homepage/special-events-tablet.jpg',
+            id: 'special-event-tablet',
+        },
+
+        desktop: {
+            src: './images/homepage/special-events-desktop.jpg',
+            id: 'special-event-desktop',
+        }
+    },
+
+    {
+        title: 'Social Events',
+        text: "Are you looking to have a larger social event? No problem! We’re more than happy to cater for big parties. We’ll work with you to make your event a hit with everyone.",
+        alt: 'Social Gathering',
+        mobile: {
+            src: './images/homepage/social-events-mobile.jpg',
+            id: 'social-event-mobile',
+
+        },
+
+        tablet: {
+            src: './images/homepage/social-events-tablet.jpg',
+            id: 'social-event-tablet',
+
+        },
+
+        desktop: {
+            src: './images/homepage/social-events-desktop.jpg',
+            id: 'social-event-desktop',
+        }
+    }
+]
+
+const updateOccasionDiv = (index = 0) => { // index will be used to access the dets of eventsData
+    // clearing the DOM each time the function is called 
+   occasionDiv.innerText = '';
+   eventsImgDiv.innerHTML = ''
+//    creating img, h6 and p tags since we are clearing the DOM
+    const cardImg = document.createElement('img');
+    const header6 = document.createElement('h6');
+    const eventP = document.createElement('p');
+
+    // this checks the width of the screen - will display the appropriate img
+    const screenWidth = window.innerWidth;
+    if (screenWidth >= 1440) { // For desktop screens
+        cardImg.src = eventsData[index].desktop.src;
+        cardImg.alt = eventsData[index].alt;
+    } else if (screenWidth >= 768) { // For tablet screens
+        cardImg.src = eventsData[index].tablet.src;
+        cardImg.alt = eventsData[index].alt;
+    } else { // For mobile screens
+        cardImg.src = eventsData[index].mobile.src;
+        cardImg.alt = eventsData[index].alt;
+    }
+
+    // adding the imgs and text to appropriate divs
+    eventsImgDiv.append(cardImg);
+    header6.innerText = eventsData[index].title;
+    eventP.innerText = eventsData[index].text;
+    occasionDiv.append(header6, eventP);
 }
 ```
-
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
-
-**Note: Delete this note and the content within this section and replace with your own learnings.**
-
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+I would definetely like to come back to this one day and build a full stack application
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Using Array.prototype.some()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some) - This helped me in implementing clear and concise code
+- [Using the date constructor](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) - This helped me with how the date constructor works and how it can be used for validation
 
 ## Author
-
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
-
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
+- Twitter - [@mroungou](https://x.com/mroungou)
