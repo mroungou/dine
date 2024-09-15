@@ -37,6 +37,14 @@
   font-size: 1.063rem;
   font-weight: 600;
 }
+.hero-book .btn-book:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: rgb(17, 17, 17);
+}
+.hero-book .btn-book:hover a, .hero-book .btn-book:hover a:visited {
+  color: rgb(17, 17, 17);
+}
 
 .form {
   margin: -8.5rem 1.5rem 4rem;
@@ -56,6 +64,9 @@
   caret-color: rgb(158, 127, 102);
   color: rgb(17, 17, 17);
 }
+.form input:hover {
+  cursor: pointer;
+}
 .form p {
   margin: 0 0 0.5rem;
 }
@@ -74,6 +85,9 @@
   width: 100%;
   padding-bottom: 1.19rem;
   padding-left: 1rem;
+}
+.form .select-container .select-box:hover {
+  cursor: pointer;
 }
 .form .select-container .icon-container {
   margin-left: auto;
@@ -113,6 +127,10 @@
 .form .people .plus-btn {
   margin-left: auto;
 }
+.form .people .plus-btn:hover,
+.form .people .minus-btn:hover {
+  cursor: pointer;
+}
 .form .btn-reserve {
   text-transform: uppercase;
   border: 1px solid rgb(255, 255, 255);
@@ -131,6 +149,14 @@
   text-decoration: none;
   font-size: 1.063rem;
   font-weight: 600;
+}
+.form .btn-reserve:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: rgb(17, 17, 17);
+}
+.form .btn-reserve:hover a, .form .btn-reserve:hover a:visited {
+  color: rgb(17, 17, 17);
 }
 
 @media screen and (min-width: 768px) {
@@ -180,6 +206,46 @@
   }
   .form .people .minus-btn {
     padding-left: 2rem;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .hero-book {
+    background: url("../../images/booking/hero-bg-desktop@2x.jpg");
+    background-size: cover;
+    padding: 6rem 8rem 15.75rem 12rem;
+    text-align: left;
+  }
+  .hero-book h1 {
+    font-size: 5rem;
+  }
+  .hero-book p {
+    margin: 1.125rem 0 0 0;
+    width: 39%;
+  }
+  .form {
+    margin: -28rem 8rem 12rem 48rem;
+  }
+  .form .name,
+  .form .email,
+  .form .date, .form .time {
+    margin-bottom: 2.5rem;
+  }
+  .form .btn-reserve {
+    width: 100%;
+  }
+  .form .btn-reserve:hover {
+    border: 1px solid rgb(17, 17, 17);
+  }
+  .patterns .pattern {
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+  }
+  .patterns .pattern-2 {
+    position: absolute;
+    top: 56%;
+    left: 47%;
+    z-index: -1;
   }
 }
 .has-error {
@@ -260,6 +326,14 @@ body {
   text-decoration: none;
   font-size: 1.063rem;
   font-weight: 600;
+}
+.hero .btn-book:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: rgb(17, 17, 17);
+}
+.hero .btn-book:hover a, .hero .btn-book:hover a:visited {
+  color: rgb(17, 17, 17);
 }
 
 .ad {
@@ -401,6 +475,14 @@ body {
   font-size: 1.063rem;
   font-weight: 600;
 }
+.events .btn-book:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: rgb(17, 17, 17);
+}
+.events .btn-book:hover a, .events .btn-book:hover a:visited {
+  color: rgb(17, 17, 17);
+}
 .events h6 {
   font-size: 2rem;
   font-weight: 700;
@@ -422,7 +504,6 @@ body {
   background-size: cover;
   padding: 5.275rem 1.5rem;
   margin-top: 8rem;
-  text-align: center;
   color: rgb(255, 255, 255);
 }
 .reserve h6 {
@@ -445,6 +526,14 @@ body {
   text-decoration: none;
   font-size: 1.063rem;
   font-weight: 600;
+}
+.reserve .btn-book:hover {
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: rgb(17, 17, 17);
+}
+.reserve .btn-book:hover a, .reserve .btn-book:hover a:visited {
+  color: rgb(17, 17, 17);
 }
 
 .footer {
@@ -485,6 +574,13 @@ body {
   bottom: 0;
   transform: translateX(-50%);
   background: rgb(158, 127, 102);
+}
+@media screen and (min-width: 1440px) {
+  .active::after {
+    left: -18%;
+    top: 20%;
+    width: 95px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -677,6 +773,9 @@ body {
   .tablet {
     display: none;
   }
+  .desktop {
+    display: block;
+  }
   .hero {
     background: url("../../images/homepage/hero-bg-desktop@2x.jpg");
     background-size: cover;
@@ -703,5 +802,166 @@ body {
   .hero .btn-book {
     margin: 0;
     margin-top: 2.5rem;
+  }
+  .ad {
+    margin: -5.5rem 8rem 6rem;
+    display: grid;
+    grid-template-columns: auto auto;
+    -moz-column-gap: 10rem;
+         column-gap: 10rem;
+    text-align: left;
+  }
+  .ad h2 {
+    margin: 0;
+    width: 80%;
+  }
+  .ad p {
+    margin: 1.7rem 0 0;
+    width: 85%;
+  }
+  .ad .text {
+    align-content: center;
+  }
+  .ad .pattern-divide {
+    margin-top: 0;
+    margin-bottom: 3.5rem;
+  }
+  .ad .pattern {
+    top: 40%;
+    right: 36%;
+  }
+  .ad .card-img img {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .locally-sourced {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: 0 0rem -4rem;
+    text-align: left;
+    padding: 0 10rem;
+  }
+  .locally-sourced h2 {
+    margin: auto auto auto 0;
+  }
+  .locally-sourced p {
+    margin: 1rem auto auto 0;
+    width: 75%;
+    line-height: 150%;
+  }
+  .locally-sourced .text {
+    grid-row: 1;
+    align-content: center;
+  }
+  .locally-sourced .card-img {
+    grid-column: 2;
+  }
+  .locally-sourced .card-img img {
+    box-shadow: none;
+  }
+  .locally-sourced .pattern {
+    top: 47%;
+    left: 38%;
+  }
+  .locally-sourced .pattern-2 {
+    z-index: 1;
+    top: 40%;
+    left: 85%;
+  }
+  .menu {
+    display: grid;
+    grid-template-columns: auto auto;
+    text-align: left;
+    padding: 9.35rem 10rem;
+  }
+  .menu .text h4 {
+    margin: 0;
+    width: 100%;
+  }
+  .menu .text p {
+    margin: 0;
+    margin-top: 1.7rem;
+    width: 100%;
+  }
+  .menu .pattern-divide {
+    margin-bottom: 3.5rem;
+  }
+  .menu .popular {
+    margin: 4rem 0rem 0 7rem;
+  }
+  .events {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    -moz-column-gap: 8rem;
+         column-gap: 8rem;
+    margin: 5.55rem 10rem 0;
+    text-align: left;
+  }
+  .events p {
+    margin: 0;
+    width: 100%;
+  }
+  .events .btn-book {
+    margin: 0;
+    margin-top: 3.75rem !important;
+  }
+  .events .btn-book:hover {
+    border: 1px solid rgb(17, 17, 17);
+  }
+  .events .card-img {
+    margin-right: auto;
+    margin-left: 0;
+  }
+  .events .pattern {
+    right: 65%;
+  }
+  .events .pattern-2 {
+    top: 1%;
+    left: -4%;
+  }
+  .events .nav {
+    grid-template-columns: none;
+    grid-template-rows: repeat(3, 1.75rem);
+    text-align: left;
+    grid-row: 1;
+    grid-column: 2;
+    margin-top: auto;
+    margin-bottom: 4rem;
+    z-index: 1;
+  }
+  .events .nav .event:hover {
+    cursor: pointer;
+    color: rgb(76, 76, 76);
+  }
+  .events .card-img {
+    margin-top: 3rem;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .events .occasion {
+    margin: 0;
+  }
+  .events .text {
+    margin-top: 6rem;
+    grid-column: 2;
+    grid-row: 1;
+  }
+  .reserve {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    text-align: left;
+    background: url("../../images/homepage/ready-bg-desktop@2x.jpg");
+    background-size: cover;
+    padding: 6.25rem 8rem;
+  }
+  .reserve .btn-book {
+    margin: 0 0 0 auto;
+  }
+  .footer {
+    grid-template-columns: repeat(3, auto);
+    padding: 4.75rem 8rem;
+  }
+  .footer .times {
+    grid-column-start: 3;
   }
 }/*# sourceMappingURL=main.css.map */

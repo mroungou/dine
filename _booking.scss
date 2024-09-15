@@ -51,6 +51,10 @@
         border-bottom: 1px solid rgba(142, 142, 142, 1);
         caret-color: c.$beaver;
         color: c.$codGray;
+
+        &:hover {
+            cursor: pointer;
+        }
     }
 
 
@@ -72,6 +76,10 @@
             width: 100%;
             padding-bottom: 1.19rem;
             padding-left: 1rem;
+
+            &:hover {
+                cursor: pointer;
+            }
         }
 
         .icon-container {
@@ -94,7 +102,6 @@
     .email, 
     .date, .time {
         margin-bottom: 2rem;
-        // border-bottom: 1px solid rgba(142, 142, 142, 1);
     }
     
 
@@ -121,6 +128,11 @@
 
         .plus-btn {
             margin-left: auto;
+        }
+
+        .plus-btn:hover,
+        .minus-btn:hover {
+            cursor: pointer;
         }
     }
 
@@ -195,6 +207,58 @@
             }
         }
     }
+}
+
+@media screen and (min-width:1440px) {
+    .hero-book {   
+        background: url('../../images/booking/hero-bg-desktop@2x.jpg');
+        background-size: cover;
+        padding: 6rem 8rem 15.75rem 12rem;
+        text-align: left;
+
+        h1 {
+            font-size: 5rem;
+        }
+
+        p {
+            margin: 1.125rem 0 0 0;
+            width: 39%;
+        }
+    }
+
+    .form {
+        margin: -28rem 8rem 12rem 48rem;
+
+        .name, 
+        .email, 
+        .date, .time {
+        margin-bottom: 2.5rem;
+        }
+
+        .btn-reserve {
+            width: 100%;
+
+            &:hover {
+                border: 1px solid c.$codGray;
+            }
+        }
+    }
+
+    .patterns {
+        .pattern {
+            z-index: -1;
+            position: absolute;
+            top: 50%;
+        }
+
+        .pattern-2 {
+            position: absolute;
+            top: 56%;
+            left: 47%;
+            z-index: -1;
+        }
+    }
+    
 }
 
 
